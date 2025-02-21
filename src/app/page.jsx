@@ -103,7 +103,7 @@ export default function Index() {
               <>
                 <TypeAnimation
                   sequence={[
-                    "Dear Sabnam, I was free and thought that I can make this as a project. Don't get me wrong! We are just friends. And I wanted your pictures for these. I didn't have any bad mindset. Hope you like it.",
+                    "Dear Sabnam, I was free and thought that I can make this as a project. Don't get me wrong! We are just friends. And I wanted your pictures for this reason. I didn't have any bad mindset. Hope you like it.",
                   ]}
                   wrapper="p"
                   speed={50}
