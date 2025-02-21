@@ -3,15 +3,23 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, Sparkles, Gift, Flower, MousePointerClick, } from "lucide-react";
 import { TypeAnimation } from "react-type-animation";
+import image_1 from '@/assets/image_1.png'
+import image_2 from '@/assets/image_2.png'
+import image_3 from '@/assets/image_3.png'
+import image_4 from '@/assets/image_4.png'
+import image_5 from '@/assets/image_5.png'
+import Image from "next/image";
 
-const images = [
-  "/image_1.png",
-  "/image_2.png",
-  "/image_3.png",
-  "/image_4.png",
-  "/image_5.png",
-  // "/image_1.png",
-];
+// const images = [
+//   "/image_1.png",
+//   "/image_2.png",
+//   "/image_3.png",
+//   "/image_4.png",
+//   "/image_5.png",
+//   // "/image_1.png",
+// ];
+
+const images = [image_1, image_2, image_3, image_4, image_5]
 
 const qualities = [
   { icon: Heart, text: "Your kindness touches everyone around you" },
@@ -133,13 +141,14 @@ export default function Index() {
                   scale: 1.05,
                   // boxShadow: "0 20px 30px rgba(0,0,0,0.2)"
                 }}
-                className="relative aspect-square rounded-2xl overflow-hidden shadow-xl backdrop-blur-sm "
+                className="relative max-w-80 aspect-square rounded-2xl overflow-hidden shadow-xl backdrop-blur-sm "
               >
-                <img
+                <Image
                   src={imageUrl}
                   alt={`Sabnam ${index + 1}`}
                   className={`w-full h-full object-cover transition-all duration-700 ease-in-out ${index === currentImageIndex ? "opacity-100 scale-100" : "opacity-100 scale-100"
                     }`}
+                  fill
                 />
                 <div className="absolute inset-0 backdrop-blur-[2px] opacity-0 hover:opacity-100 transition-opacity duration-300" />
               </motion.div>
@@ -199,7 +208,7 @@ function FloatingHearts() {
       {[...Array(40)].map((_, i) => (
         <motion.div
           key={i}
-          initial={{ y: Math.random() * 200 + 400 }}
+          initial={{ y: Math.random() * 200 + 500 }}
           animate={{
             y: -100,
             x: Math.sin(i) * 100,
